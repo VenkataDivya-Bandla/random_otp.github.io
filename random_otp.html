@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Random password generator</title>
+        <style>
+            .random{
+                width:200px;
+                height:20px;
+                margin-top:60px;
+                margin-left:500px
+            }
+            button{
+                width:140px;
+                height:25px;
+                background-color: green;
+                margin-left:520px;
+                margin-top:30px
+            }
+        </style>
+    </head>
+    <body>
+        <div id="demo">
+            <input type="text" id="field" class="random" placeholder="Enter OTP">
+        </div>
+        <button type="button" onclick="randomotp()">Generate otp</button>
+        <script>
+            function generaterandomotp(length){
+                let charset="0123456789";
+                let otp="";
+                for (let i=0 ;i<length;i++ ){
+                    let randindex=Math.floor(Math.random() * charset.length);
+                    otp+=charset[randindex];
+                }
+                return otp;
+            }
+            function randomotp(){
+                const otp1=generaterandomotp(6);
+                document.getElementById("field").value=otp1;
+            }
+        </script>
+    </body>
+
+</html>
